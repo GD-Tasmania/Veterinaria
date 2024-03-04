@@ -14,14 +14,13 @@ public record Mascotas (String nombre, String especie, String raza, int edad, St
 
     @Override
     public String toString() {
-        return "XYZMascota{" +
-        "Nombre='" + nombre + '\'' + 
-        ", Especie='" + especie + '\''+ 
-        ", Raza'" + raza + '\'' +
-        ", Edad='" + edad + '\'' +
-        ", Genero='" + genero + '\'' +
-        ", Color='" + color + '\'' + 
-        ", Peso='" + peso + '\'' +
-        '}'; 
+    return String.format("Mascota:\n" +
+            "Nombre: %s\n" +
+            "Especie: %s\n" +
+            "Raza: %s\n" +
+            "Edad: %d\n" +
+            "Genero: %s\n" +
+            "Color: %s\n" +
+            "Peso: %.2f", nombre, especie, raza, edad, genero, color, peso);
     }
 }
