@@ -52,7 +52,7 @@ public class AppTest {
     @Test
     public void datosCompletos() {
         LOG.info("Iniciado test datosCompletos");
-        Mascotas mascota = new Mascotas("Firulais", "Perro", "Chihuahua", 2, "Masculino", "Negro", 22.5);
+        Mascotas mascota = new Mascotas("Firulais", "Perro", "Chihuahua", 2, "Masculino", "Negro", 22.5, 1);
 
         assertAll("Mascota",
         () -> assertEquals("Firulais", mascota.nombre()),
@@ -73,7 +73,7 @@ public class AppTest {
     @Test
     public void datosNulos() {
         LOG.info("Inicio datosNulos");
-        assertThrows(Throwable.class, () -> new Mascotas(null, null, null, 2, null, null, 18));
+        assertThrows(Throwable.class, () -> new Mascotas(null, null, null, 2, null, null, 18, 1));
         LOG.info("Finalización datosNulos");
     }
 
@@ -83,7 +83,7 @@ public class AppTest {
     @Test
     public void datosVacios() {
         LOG.info("Inicio datosVacios");
-        assertThrows(Throwable.class, () -> new Mascotas("", "", "", 1, "", "", 18));
+        assertThrows(Throwable.class, () -> new Mascotas("", "", "", 1, "", "", 18, 1));
         LOG.info("Finalización datosVacios");
     }
 
@@ -93,7 +93,7 @@ public class AppTest {
     @Test
     public void edadNegativa() {
         LOG.info("Inicio edadNegativa");
-        assertThrows(Throwable.class, () -> new Mascotas("Garfield", "Gato", "Siames", -1, "Femenino", "Blanco", 12.5));
+        assertThrows(Throwable.class, () -> new Mascotas("Garfield", "Gato", "Siames", -1, "Femenino", "Blanco", 12.5, 1));
         LOG.info("Finalización edadNegativa");
     }
 
@@ -103,7 +103,7 @@ public class AppTest {
     @Test
     public void pesoNegativo() {
         LOG.info("Inicio pesoNegativo");
-        assertThrows(Throwable.class, () -> new Mascotas("Garfield", "Gato", "Siames", 1, "Femenino", "Blanco", -12.5));
+        assertThrows(Throwable.class, () -> new Mascotas("Garfield", "Gato", "Siames", 1, "Femenino", "Blanco", -12.5, 1));
         LOG.info("Finalización pesoNegativo");
     }
 }
